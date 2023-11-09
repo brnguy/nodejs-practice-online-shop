@@ -5,7 +5,8 @@ exports.getAllProducts = (req, res, next) => {
 };
 
 exports.addProducts = (req, res, next) => {
-    res.render('products', {
-        pageTitle: 'Add Products'
+    res.render('add-product', {
+        pageTitle: 'Add Product',
+        path: 'admin/add-product'
     })
 }
