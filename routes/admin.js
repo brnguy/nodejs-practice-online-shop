@@ -1,14 +1,12 @@
 const express = require('express');
 
 const router = express.Router();
+
 const productsController = require('../controllers/products');
+const cartController = require('../controllers/cart');
 
-router.get('/products', productsController.getAllProducts);
+router.get('/products', productsController.addProducts);
 
-router.get('/cart', (req, res, next) => {
-    res.render('cart', {
-        pageTitle: 'My Cart'
-    });
-})
+router.get('/cart', cartController.getCart);
 
 module.exports = router;
