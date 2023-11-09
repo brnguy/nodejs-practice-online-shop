@@ -6,15 +6,9 @@
     <title><%= pageTitle %></title>
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/products">Products</a></li>
-                <li><a href="/cart">My Cart</a></li>
-            </ul>
-        </nav>
-    </header>
-    <h1><%= pageTitle %></h1>
+    <%- include('includes/nav.ejs') %>
+    <main>
+        <h1><%= pageTitle %></h1>
+    </main>
 </body>
 </html>
