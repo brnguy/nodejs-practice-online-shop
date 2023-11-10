@@ -2,7 +2,7 @@ const Product = require('../models/product');
 
 exports.getAllProducts = (req, res, next) => {
     const products = Product.fetchAll();
-    res.render('shop', {
+    res.render('products', {
         pageTitle: 'Home Page',
         prods: products,
         path: '/',
@@ -17,7 +17,7 @@ exports.getAddProduct = (req, res, next) => {
 }
 
 exports.postAddProduct = (req, res, next) => {
-    const product = new Product(req.body.title);
+    const product = new Product(req.body.title, req.body.price, req.body.description);
     product.save();
     res.redirect('/');
 }
