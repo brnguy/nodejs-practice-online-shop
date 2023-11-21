@@ -12,10 +12,14 @@
 
     <main>
         <h1><%= pageTitle %></h1>
-        <form action="/admin/add-product" method="POST" class="add-product">
+        <form action="/admin/add-product" method="POST" class="product">
             <div class="input-box">
                 <label for="title">Title</label>
                 <input type="text" name="title" id="title"/>
+            </div>
+            <div class="input-box">
+                <label for="imageUrl">Image URL</label>
+                <input type="text" name="imageUrl" id="imageUrl"/>
             </div>
             <div class="input-box">
                 <label for="price">Price (in USD)</label>

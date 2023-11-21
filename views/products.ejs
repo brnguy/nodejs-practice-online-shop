@@ -5,22 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= pageTitle %></title>
     <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/products.css">
 </head>
 <body>
     <%- include('includes/nav.ejs') %>
 
     <main>
         <h1><%= pageTitle %></h1>
-        <% if (prods.length > 0) { %>
-        <% prods.forEach(product => { %>
-            <div>
-                <h3><%= product.title %></h3>
-                <h5><%= product.description %></h5>
-                <h3><%= product.price %></h3>
-            </div>
-            <button href="/">Edit</button>
-            <button href="/">Delete</button>
-        <% })} %>
+        <div class="grid">
+            <% if (prods.length > 0) { %>
+            <% prods.forEach(product => { %>
+                <div class="product">
+                    <h3><%= product.title %></h3>
+                    <img class="product-image" src="<%= product.imageUrl %>"/>
+                    <h5><%= product.description %></h5>
+                    <h3><%= product.price %></h3>
+                    <div>
+                        <button href="/">Edit</button>
+                        <button href="/">Delete</button>
+                    </div>
+                </div>
+            <% })} %>
+        </div>
     </main>
 </body>
 </html>
